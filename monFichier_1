@@ -1,0 +1,41 @@
+bbonjour
+27
+
+G = nx.Graph()
+G.add_edges_from([("A", "D"), ("A", "I"), ("A", "C"), ("A", "E"), ("A", "F"), ("A", "H"),
+                  ("B", "I"), ("B", "H"), ("B", "G"), ("B", "F"), ("B", "E"), ("B", "D"), ("B", "L"),
+                  ("C", "J"), ("C", "K")])
+
+                  for v in G:
+    print(v)
+    segma_st = 0
+    segma_st_v = 0
+    # help = []
+    for s in G:
+        for t in G:
+            # if (t,s) in help:
+            #     continue
+            # help.append((s,t))
+            sp = nx.all_shortest_paths(G, source=s, target=t)
+            spList = []
+            for p in sp:
+                print(p)
+                spList.append(p)
+            print(len(spList))
+
+            # sp = nx.single_source_shortest_path(G, source=v)
+            # print(sp)
+            # # //print(len(list(sp)))
+            # segma_st = segma_st + 1
+            # if s == t:
+            #     continue
+            # for p in sp:
+            #     if (v == s or v == t):
+            #         continue
+            #     elif (v in p):
+            #         print(p)
+            #         segma_st_v = segma_st_v + 1
+    # print(segma_st)
+    # print(segma_st_v)
+    # between[v] = segma_st_v / segma_st
+    # between[v] = (2/((N-1)*(N-2)))*(segma_st_v/segma_st)
